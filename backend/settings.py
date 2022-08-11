@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from re import T
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,9 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-     
+    "products.apps.ProductsConfig",
 ]
- 
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -77,14 +78,13 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE":"django.db.backends.postgresql_psycopg2",
-        "NAME":"fullstackuser2",   #db name
-        "USER":"fullstackuser2",
-        "PASSWORD":"fullstackuser2",
-        "HOST":"localhost",
-        "PORT":"5432",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "fullstackuser",  # db name
+        "USER": "fullstackuser",
+        "PASSWORD": "fullstackuser",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
-    
 }
 
 
